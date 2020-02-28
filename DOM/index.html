@@ -20,11 +20,12 @@
         <li>Etudiant 6</li>
         <li>Etudiant 7</li>
     </ul>
-    <p id="text1">Rolls est trop swagg today</p>
-    <p id="text2"> Mr.Bot est trop swagg</p>
+    <!-- <p id="text1">Rolls est trop swagg today</p>
+    <p id="text2"> Mr.Bot est trop swagg</p> -->
+    <p id="np">TEST TEST TES TSES ST TST TEST TEST TEST TEST TEST TEST TEST </p>
     <div>
-        <button id="rouge" onclick="colorRouge()">Rouge</button>
-        <button id="blue" onclick="colorBlue()">Bleu</button>
+        <button id="rouge" onclick="changeColor('red')">Rouge</button>
+        <button id="blue" onclick="changeColor('blue')">Bleu</button>
     </div>
 
     <script>
@@ -33,16 +34,20 @@
         var el = document.getElementsByTagName("ul")[0];
 
         document.getElementById("para").innerHTML = el.getElementsByTagName("li")[2].innerHTML;
-        console.log(el);
+        
 
-        function colorRouge() {
-            var p1 = document.querySelector("#text1");
-            p1.style.color = "red";
-        }
+        // function colorRouge() {
+        //     var p1 = document.querySelector("#text1");
+        //     p1.style.color = "red";
+        // }
 
-        function colorBlue() {
-            var p1 = document.querySelector("#text2");
-            p1.style.color = "blue";
+        // function colorBlue() {
+        //     var p1 = document.querySelector("#text2");
+        //     p1.style.color = "blue";
+        // }
+
+        function changeColor(color){
+            document.getElementById("np").style.color=color;
         }
     </script>
 </body>
