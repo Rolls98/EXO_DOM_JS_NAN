@@ -24,7 +24,7 @@
     <script>
         document.querySelector("#para").innerHTML = "Mon premier test JS".toUpperCase();
         document.querySelector("#para").style.color = "blue";
-        var el = document.getElementsByTagName("ul")[0];
+        var el = document.getElementsByTagName("ul")[0].children[2].innerHTML;
 
         document.getElementById("para").innerHTML = el;
         console.log(el)
