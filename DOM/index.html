@@ -6,70 +6,17 @@
     <title>DOM - Document Objet Model</title>
   </head>
 
-  <body onload="">
-    <!-- <p id='para'></p>
-    <h1 id="hello">Bonjour le monde</h1>
-    <ul>
-        Listes de JS
-        <li>Etudiant 1</li>
-        <li>Etudiant 2</li>
-        <li>Etudiant 3</li>
-        <li>Etudiant 4</li>
-        <li>Etudiant 5</li>
-        <li>Etudiant 6</li>
-        <li>Etudiant 7</li>
-    </ul> -->
-    <!-- <p id="text1">Rolls est trop swagg today</p>
-    <p id="text2"> Mr.Bot est trop swagg</p> -->
-    <!-- <p id="np">TEST TEST TES TSES ST TST TEST TEST TEST TEST TEST TEST TEST </p>
-    <div>
-        <button id="rouge" onclick="changeColor('red')">Rouge</button>
-        <button id="blue" onclick="changeColor('blue')">Bleu</button>
-    </div> -->
-
-    <!-- Creation d'un formulaire -->
-    <!-- <form action="">
-      <label for="nom">Veuillez Entrer votre nom</label> <br />
-      <input type="text" id="nom" /><br />
-      <label for="age">Veuillez Entrer votre age</label> <br />
-      <input type="number" id="age" /><br />
-    </form>
-    <button id="ok">Afficher</button> -->
-
-    <p id="palu">HELLO WORLD , HOW ARE YOU ?</p>
-
+  <body>
+    <label for="">Nom : </label>
+    <input type="text" />
     <script>
-      // document.querySelector("#para").innerHTML = "Mon premier test JS".toUpperCase();
-      // document.querySelector("#para").style.color = "blue";
-      // var el = document.getElementsByTagName("ul")[0];
-
-      // document.getElementById("para").innerHTML = el.getElementsByTagName("li")[2].innerHTML;
-
-      // function colorRouge() {
-      //     var p1 = document.querySelector("#text1");
-      //     p1.style.color = "red";
-      // }
-
-      // function colorBlue() {
-      //     var p1 = document.querySelector("#text2");
-      //     p1.style.color = "blue";
-      // }
-
-      // function changeColor(color){
-      //     document.getElementById("np").style.color=color;
-      // }
-
-      // function msg(){
-      //     alert("ici alpha1")
-      // }
-
-      let el = document.getElementById("palu");
-      //   let ok = document.getElementById("ok");
-      el.addEventListener("mouseover", function() {
-        // let nom = document.querySelector("#nom").value;
-        // let age = document.querySelector("#age").value;
-        // let prenom = document.getElementById("prenom");
-        alert("Bienvenu sur notre Site");
+      var input = document.getElementsByTagName("input")[0];
+      input.addEventListener("click", function() {
+        if (input.getAttribute("type") === "text") {
+          input.setAttribute("type", "button");
+        } else {
+          input.setAttribute("type", "text");
+        }
       });
     </script>
   </body>
