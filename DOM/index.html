@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM - Document Objet Model</title>
-</head>
+  </head>
 
-<body>
-    <p id='para'></p>
+  <body onload="">
+    <!-- <p id='para'></p>
     <h1 id="hello">Bonjour le monde</h1>
     <ul>
         Listes de JS
@@ -19,37 +18,48 @@
         <li>Etudiant 5</li>
         <li>Etudiant 6</li>
         <li>Etudiant 7</li>
-    </ul>
+    </ul> -->
     <!-- <p id="text1">Rolls est trop swagg today</p>
     <p id="text2"> Mr.Bot est trop swagg</p> -->
-    <p id="np">TEST TEST TES TSES ST TST TEST TEST TEST TEST TEST TEST TEST </p>
+    <!-- <p id="np">TEST TEST TES TSES ST TST TEST TEST TEST TEST TEST TEST TEST </p>
     <div>
         <button id="rouge" onclick="changeColor('red')">Rouge</button>
         <button id="blue" onclick="changeColor('blue')">Bleu</button>
-    </div>
+    </div> -->
+
+    <p id="palu"></p>
 
     <script>
-        document.querySelector("#para").innerHTML = "Mon premier test JS".toUpperCase();
-        document.querySelector("#para").style.color = "blue";
-        var el = document.getElementsByTagName("ul")[0];
+      // document.querySelector("#para").innerHTML = "Mon premier test JS".toUpperCase();
+      // document.querySelector("#para").style.color = "blue";
+      // var el = document.getElementsByTagName("ul")[0];
 
-        document.getElementById("para").innerHTML = el.getElementsByTagName("li")[2].innerHTML;
-        
+      // document.getElementById("para").innerHTML = el.getElementsByTagName("li")[2].innerHTML;
 
-        // function colorRouge() {
-        //     var p1 = document.querySelector("#text1");
-        //     p1.style.color = "red";
-        // }
+      // function colorRouge() {
+      //     var p1 = document.querySelector("#text1");
+      //     p1.style.color = "red";
+      // }
 
-        // function colorBlue() {
-        //     var p1 = document.querySelector("#text2");
-        //     p1.style.color = "blue";
-        // }
+      // function colorBlue() {
+      //     var p1 = document.querySelector("#text2");
+      //     p1.style.color = "blue";
+      // }
 
-        function changeColor(color){
-            document.getElementById("np").style.color=color;
-        }
+      // function changeColor(color){
+      //     document.getElementById("np").style.color=color;
+      // }
+
+      // function msg(){
+      //     alert("ici alpha1")
+      // }
+
+      let el = document.getElementById("palu");
+      addEventListener("click", function() {
+        let nom = prompt("Entrez votre nom");
+        let age = prompt("Entrez votre age");
+        el.innerHTML = "Bienvenu Mr " + nom + " vous avez " + age + " ans";
+      });
     </script>
-</body>
-
+  </body>
 </html>
