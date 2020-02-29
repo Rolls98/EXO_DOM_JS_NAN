@@ -27,6 +27,15 @@
         <button id="blue" onclick="changeColor('blue')">Bleu</button>
     </div> -->
 
+    <!-- Creation d'un formulaire -->
+    <form action="">
+      <label for="nom">Veuillez Entrer votre nom</label> <br />
+      <input type="text" id="nom" ><br />
+      <label for="age">Veuillez Entrer votre age</label> <br />
+      <input type="number" id="age" ><br />
+    </form>
+    <button id="ok">Afficher</button>
+
     <p id="palu"></p>
 
     <script>
@@ -55,10 +64,11 @@
       // }
 
       let el = document.getElementById("palu");
-      addEventListener("click", function() {
-        let nom = prompt("Entrez votre nom");
-        let age = prompt("Entrez votre age");
-        el.innerHTML = "Bienvenu Mr " + nom + " vous avez " + age + " ans";
+      let ok = document.getElementById("ok");
+      ok.addEventListener("click", function() {
+        let nom = document.querySelector('#nom').value;
+        let age = document.querySelector('#age').value;
+        alert("Bienvenu Mr/Mme " + nom + " vous avez " + age + " ans");
       });
     </script>
   </body>
