@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM - Document Objet Model</title>
-  </head>
+</head>
 
-  <body>
-    <label for="">Nom : </label>
-    <input type="text" />
+<body>
+    <h1>EXERCICE 1</h1>
+    <img src="images/pic_bulboff.gif" alt=""><br>
+    <button id="btn">ON/OFF</button>
     <script>
-      var input = document.getElementsByTagName("input")[0];
-      input.addEventListener("click", function() {
-        if (input.getAttribute("type") === "text") {
-          input.setAttribute("type", "button");
-        } else {
-          input.setAttribute("type", "text");
-        }
-      });
+        var btn = document.getElementById("btn");
+        btn.addEventListener("click", function () {
+            var img = document.getElementsByTagName("img")[0];
+            if (img.getAttribute("src") === "images/pic_bulboff.gif") {
+                img.setAttribute("src", "images/pic_bulbon.gif");
+            } else {
+                img.setAttribute("src", "images/pic_bulboff.gif");
+            }
+        });
     </script>
-  </body>
+</body>
+
 </html>
