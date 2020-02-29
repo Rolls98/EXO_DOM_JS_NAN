@@ -29,3 +29,26 @@ js.addEventListener("click", function() {
   var input = document.getElementsByTagName("input")[0].value;
   Game(image, input);
 });
+
+var np = "2,	3,	5,	7,	11,	13,	17,	19,	23,	29,	31,	37,	41,	43,	47,	53,	59,	61,	67,	71,	73,	79,	83,	89,	97"
+  .split(",")
+  .map(el => parseInt(el));
+var fac = [];
+
+function listFacteur(nb) {
+  var tmp = nb;
+  var tmpi = 0;
+  for (var i = 0; i < np.length; i++) {
+    if (tmp % np[i] === 0) {
+      fac.push(np[i]);
+      tmp /= np[i];
+      tmpi = i;
+      i = tmpi;
+    } else {
+      continue;
+    }
+  }
+}
+
+listFacteur(11);
+console.log(Math.max(...fac));
