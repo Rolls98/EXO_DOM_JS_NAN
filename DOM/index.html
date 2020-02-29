@@ -5,21 +5,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM - Document Objet Model</title>
+    <style>
+        .main {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            text-align: center;
+            border: 2px solid #dedede;
+            box-shadow: 2px 2px 10px #333;
+
+        }
+
+        #btn {
+            display: block;
+            width: 250px;
+            height: 40px;
+            margin: 50px auto;
+            border-radius: 5px;
+            border: 1px solid #dedede;
+            background-color: orange;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 1px 2px 4px #333;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>EXERCICE 1</h1>
-    <img src="images/pic_bulboff.gif" alt=""><br>
-    <button id="btn">ON/OFF</button>
+    <div class="main">
+        <h1>EXERCICE 1</h1>
+        <img src="images/pic_bulboff.gif" alt=""><br>
+        <button id="btn">ON/OFF</button>
+    </div>
     <script>
         var btn = document.getElementById("btn");
+        var alum = "images/pic_bulbon.gif";
+        var eteint = "images/pic_bulboff.gif"
         btn.addEventListener("click", function () {
             var img = document.getElementsByTagName("img")[0];
-            if (img.getAttribute("src") === "images/pic_bulboff.gif") {
-                img.setAttribute("src", "images/pic_bulbon.gif");
-            } else {
-                img.setAttribute("src", "images/pic_bulboff.gif");
-            }
+            img.setAttribute("src", img.getAttribute("src") == eteint ? alum : eteint);
         });
     </script>
 </body>
