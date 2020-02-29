@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Faire un bon permettant d'allumer et eteindre la lampe -->
+    <h1>EXERCICE 1</h1>
+    <img src="images/pic_bulboff.gif" alt=""><br>
+    <button id="btn">ON/OFF</button>
+    <script>
+        var btn = document.getElementById("btn");
+        btn.addEventListener("click", function () {
+            var img = document.getElementsByTagName("img")[0];
+            if (img.getAttribute("src") === "images/pic_bulboff.gif") {
+                img.setAttribute("src", "images/pic_bulbon.gif");
+            } else {
+                img.setAttribute("src", "images/pic_bulboff.gif");
+            }
+        });
+    </script>
+</body>
+</html>
