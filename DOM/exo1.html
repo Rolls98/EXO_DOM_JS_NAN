@@ -14,6 +14,12 @@
         var btn = document.getElementById("btn");
         btn.addEventListener("click", function () {
             var img = document.getElementsByTagName("img")[0];
+            /*
+                la logique permet de voir si la source de l'image correspond à la lampe éteinte
+                => la source change en image allumé(images/pic_bulbon.gif);
+                    => Sinon
+                        => elle change la source en image éteint(images/pic_bulboff.gif);
+            */
             if (img.getAttribute("src") === "images/pic_bulboff.gif") {
                 img.setAttribute("src", "images/pic_bulbon.gif");
             } else {
