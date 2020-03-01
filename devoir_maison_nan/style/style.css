@@ -6,14 +6,7 @@
 
 .myblog {
   width: 900px;
-  margin: 40px auto;
-}
-
-#haut,
-#bas {
-  width: 700px;
-  margin: auto;
-  text-align: center;
+  margin: 150px auto;
 }
 
 .main {
@@ -24,7 +17,6 @@
   background-color: transparent;
   perspective: 1000px;
   display: inline-block;
-  transition: 0.5s;
 }
 
 .carte {
@@ -36,7 +28,6 @@
   text-align: center;
   transition: 0.8s transform;
   cursor: pointer;
-  border: 2px solid #dedede;
 }
 
 .avant,
