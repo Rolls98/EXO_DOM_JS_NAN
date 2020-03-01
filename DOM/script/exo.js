@@ -28,7 +28,7 @@ var js = document.getElementById("jouer");
 js.addEventListener("click", function() {
   var input = document.getElementsByTagName("input")[0].value;
   Game(image, input);
-  600851475143;
+ 
 });
 
 // function listFacteur(nb) {
