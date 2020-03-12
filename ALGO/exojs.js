@@ -18,7 +18,7 @@ la fonction retourne la somme des deux fractions (sans simplifaction);
 
 exemple : 
     "2/2+4/2" ="6/2";
-    "2/3+4/4" = "16/6"; 
+    "2/3+4/2" = "16/6"; 
 */
 
 function ordonne(a, b) {
