@@ -32,3 +32,24 @@ function isFind(st, ind) {
   }
   return find;
 }
+
+function mdSplit(chaine, del) {
+  if (isFind(chaine, del)) {
+    let s = "";
+    let tab = [];
+
+    for (let i = 0; i < chaine.length; i++) {
+      if (chaine[i] == del) {
+        tab.push(s);
+        s = "";
+      } else {
+        s += chaine[i];
+      }
+    }
+    tab.push(s);
+
+    return tab;
+  }
+}
+
+console.log(mdSplit("salut ndk ?", " "));

@@ -11,4 +11,4 @@ function reverse(tab) {
   }
 }
 
-console.log(reverse([]));
+console.log(reverse(["r", "a", "m", "e", "u", "x"]));
