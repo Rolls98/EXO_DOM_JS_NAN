@@ -31,17 +31,79 @@ function pluspetit(tab) {
   let tabEl = [];
   let elm = 2;
   tab.sort(ordonne);
-  for (var i = 1; i < tab.length - 1; i++) {
-    if (tab[0][0] - tab[0][1] == tab[i][0] - tab[i][1]) {
+  for (var i = 2; i < tab.length - 1; i++) {
+    if (
+      tab[0][0] - tab[0][1] == tab[i][0] - tab[i][1] ||
+      tab[1][0] - tab[1][1] == tab[i][0] - tab[i][1]
+    ) {
       elm++;
     }
   }
   console.log(tab.slice(0, elm));
 }
 
-pluspetit([
-  [9, 3],
-  [4, 1],
-  [5, 1],
-  [13, 10]
-]);
+function AutreMethod(tab) {
+  let tabfinal = [];
+  let petitab = [];
+  for (let i = 0; i < tab.length; i++) {
+    petitab.push(tab[i][0] - tab[i][1]);
+  }
+  petittab = petitab.sort();
+
+  for (let elt of tab) {
+    if (elt[0] - elt[1] == petitab[0] || elt[0] - elt[1] == petitab[1])
+      tabfinal.push(elt);
+  }
+
+  console.log(tabfinal);
+}
+
+function tableau(tab) {
+  let min = tab.map(l => l[0] - l[1]);
+  var t = Min(min);
+  return tab.filter(el => t.includes(el[0] - el[1]));
+}
+
+function Min(tab) {
+  let output = [];
+  let min = tab[0];
+  while (output.length < 2) {
+    for (let i = 0; i < tab.length; i++) {
+      if (min > tab[i] && tab[i] != min) {
+        min = tab[i];
+      }
+    }
+    output.push(min);
+    tab.splice(tab.indexOf(min), 1);
+    min = tab[0];
+  }
+  return output;
+}
+// pluspetit([
+//   [1, 4],
+//   [4, 2],
+//   [5, 2],
+//   [4, 3],
+//   [11, 10],
+//   [7, 6]
+// ]);
+
+// // AutreMethod([
+// //   [1, 4],
+// //   [4, 2],
+// //   [5, 2],
+// //   [4, 3],
+// //   [11, 10],
+// //   [7, 6]
+// // ]);
+
+// console.log(
+//   tableau([
+//     [1, 4],
+//     [4, 2],
+//     [5, 2],
+//     [4, 3],
+//     [11, 10],
+//     [7, 6]
+//   ])
+// );
