@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div id="user">
+        <form action="">
+            <p>Bienvenu sur notre site</p>
+            <p>Entrez juste votre nom pour jouer à notre jeu de la fortune. vous pouvez vous faire beaucoup de sous.<br>
+                Essayez voir, c'est interressant</p>
+            <input type="text" placeholder="Entrez votre nom"><br>
+            <input type="submit" value="Connexion">
+        </form>
+    </div>
+    <div id="montant">
+        <span id="pos"></span>
+        <span id="neg"></span>
+    </div>
+    <div id="main">
+        <span class="triangle"></span>
+        <div class="roue roueMove">
+        </div>
+        <input type="text" id="mise" placeholder="ENTRER VOTRE MISE(min 350 et max 1000)"><br>
+        <button id="btn">Clique ICI</button>
+    </div>
+    <script src="script/scriptRoue.js"></script>
+</body>
+
+</html>

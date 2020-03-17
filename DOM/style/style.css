@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #dedede;
+}
+
+#main {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    margin: 45px auto;
+    border-radius: 50%;
+}
+
+.roue {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    transform: rotate(-30deg);
+    /* background-color: black;*/
+    background: url("../images/roue.png") no-repeat center;
+}
+
+/* .roueMove {
+    animation-name: roue;
+    animation-duration: 4.8s;
+    border-radius: 50%;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+} */
+
+.childrenRoue {
+    position: absolute;
+    width: 40px;
+    height: 100%;
+    border: 1px solid black;
+    left: 45%;
+    text-align: center;
+
+}
+
+.triangle {
+    display: block;
+    position: absolute;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #dedede;
+    border-bottom: 15px solid transparent;
+    top: 10px;
+    z-index: 100;
+    left: 48%;
+
+}
+
+
+
+@keyframes roue {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+#user form {
+    position: absolute;
+    width: 500px;
+    height: 540px;
+    left: 50%;
+    font-size: 25px;
+    padding: 15px;
+    border: 2px solid #dedede;
+    border-radius: 10px;
+    text-align: center;
+    background: white;
+    transform: translateX(-50%);
+    z-index: 150;
+    transition: opacity 1s;
+}
+
+#user form input[type="text"] {
+    width: 70%;
+    height: 45px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #dedede;
+}
+
+#user form input[type="submit"] {
+    display: block;
+    width: 40%;
+    height: 45px;
+    margin: 25px auto;
+    background-color: blue;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#montant {
+    position: absolute;
+    width: 250px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#montant #name {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#mise {
+    width: 80%;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #dedede;
+    padding-left: 15px;
+}
+
+#btn {
+    display: block;
+    margin-top: 5px;
+    margin-left: 85px;
+    width: 40%;
+    height: 35px;
+}
+
+#neg {
+    color: red;
+    top: 75%;
+}
+
+#neg,
+#pos {
+    display: block;
+    position: absolute;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    left: 35%;
+    font-weight: bold;
+    transition: top 2s, opacity 2.5s;
+}
+
+
+#pos {
+    color: green;
+    top: 30%;
+
+}
