@@ -146,9 +146,36 @@ body {
     transition: top 2s, opacity 2.5s;
 }
 
+.rouge {
+    color: red;
+}
+
+.vert {
+    color: green;
+}
 
 #pos {
     color: green;
     top: 30%;
+}
 
+#historique {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 300px;
+    opacity: 0;
+    transition: opacity 1.2s;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 8px;
+}
+
+table td {
+    text-align: center;
 }

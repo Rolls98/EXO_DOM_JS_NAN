@@ -7,6 +7,10 @@ let mise = document.querySelector("#mise");
 let neg = document.querySelector("#neg");
 let pos = document.querySelector("#pos");
 let user = { montant: 10000 };
+let tabHis = [];
+let tbody = document.querySelector("table tbody");
+let total = document.querySelectorAll("table tfoot td")[1];
+let his = document.querySelector("#historique");
 
 connex.addEventListener("click", e => {
   e.preventDefault();
@@ -29,11 +33,15 @@ btnClick.addEventListener("click", function(e) {
     if (parseInt(mise.value) < 500) {
       alert("la mise min est 500");
     } else {
+      tabHis.unshift("-" + mise.value);
       neg.innerHTML = "-" + mise.value;
       neg.style = "top:0;opacity:0";
+      his.style.opacity = "1";
       user.montant -= mise.value;
       tourne();
       AfficheMontant();
+      tbody.innerHTML = "";
+      Historique();
     }
   } else {
     alert("Veuillez inserer votre mise");
@@ -80,10 +88,13 @@ function AfficheMontant() {
 }
 
 function AjoutMontant(mnt) {
+  tabHis.unshift("+" + mnt);
   pos.innerHTML = "+" + mnt;
   pos.style = "top:100%;opacity:0";
   setTimeout(initPos, 500);
   user.montant += mnt;
+  tbody.innerHTML = "";
+  Historique();
 }
 
 function initPos() {
@@ -95,6 +106,25 @@ function initNeg() {
   neg.innerHTML = "";
   neg.style = "top:85%;opacity:1";
 }
+
+function Historique() {
+  for (let i = 0, l = tabHis.length; i < l && i < 15; i++) {
+    let tr = createBlock("tr");
+    let tdi = createBlock("td");
+    let tdm = createBlock("td");
+    tdi.innerHTML = i + 1;
+    tdm.innerHTML = tabHis[i];
+    tdm.className = tabHis[i] > 0 ? "vert" : "rouge";
+    tr.append(tdi, tdm);
+    tbody.append(tr);
+  }
+  let t = tabHis.reduce((t, el) => {
+    return t + parseInt(el);
+  }, 0);
+  total.innerHTML = (t > 0 ? "+" : "") + t;
+  total.className = t > 0 ? "vert" : "rouge";
+}
+
 // function tourne() {
 //   deg += 15;
 //   roue.style = "transform:rotate(" + deg + "deg)";
@@ -140,11 +170,11 @@ function withdraw(deg) {
     case 60:
       setTimeout(tourne, 1000);
       break;
-    case 85:
+    case 75:
       AjoutMontant(500);
       break;
     case 90:
-      AjoutMontant(850);
+      AjoutMontant(750);
       break;
     case 105:
       AjoutMontant(600);
