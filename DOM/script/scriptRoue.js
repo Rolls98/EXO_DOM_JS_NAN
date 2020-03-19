@@ -32,7 +32,7 @@ btnClick.addEventListener("click", function(e) {
   if (parseInt(mise.value)) {
     if (parseInt(mise.value) < 500) {
       alert("la mise min est 500");
-    } else {
+    } else if (parseInt(mise.value) < user.montant) {
       tabHis.unshift("-" + mise.value);
       neg.innerHTML = "-" + mise.value;
       neg.style = "top:0;opacity:0";
@@ -42,13 +42,15 @@ btnClick.addEventListener("click", function(e) {
       AfficheMontant();
       tbody.innerHTML = "";
       Historique();
+    } else {
+      alert("vous n'avez pas assez de pieces");
     }
   } else {
     alert("Veuillez inserer votre mise");
   }
 });
 
-function tourne() {
+/*function tourne() {
   let roueMove = setInterval(() => {
     deg += 15;
     roue.style = "transform:rotate(" + deg + "deg)";
@@ -62,9 +64,11 @@ function tourne() {
     withdraw(deg);
     AfficheMontant();
   }, aleatoire(50, 150) * time);
-}
+}*/
 
-let time = 50;
+let time = 25;
+let stop = aleatoire(200, 350) * time;
+let control = 0;
 function aleatoire(min, max) {
   return parseInt(Math.random() * (min + max - 1) + min);
 }
@@ -125,26 +129,30 @@ function Historique() {
   total.className = t > 0 ? "vert" : "rouge";
 }
 
-// function tourne() {
-//   deg += 15;
-//   roue.style = "transform:rotate(" + deg + "deg)";
-//   console.log(deg);
-//   if (deg >= 360) {
-//     deg = 0;
-//   }
+function tourne() {
+  deg += 15;
+  roue.style = "transform:rotate(" + deg + "deg)";
+  console.log(deg);
+  if (deg >= 360) {
+    deg = 0;
+  }
 
-//   console.log("td", td);
-//   console.log("deg", deg);
+  control += 50;
 
-//   if (deg == td) {
-//     roue.style = "transform:rotate(" + deg + "deg)";
-//     console.log("deg : ", deg);
-//     withdraw(deg);
-//     return;
-//   }
+  time += control >= stop - 500 ? 25.5 : 0.1;
 
-//   setTimeout(tourne, time);
-// }
+  if (control >= stop) {
+    console.log("control", control);
+    console.log("stop", stop);
+    withdraw(deg);
+    control = 0;
+    time = 25;
+    stop = aleatoire(200, 350) * time;
+    return;
+  }
+
+  setTimeout(tourne, time);
+}
 
 // tourne();
 
